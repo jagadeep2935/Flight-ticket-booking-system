@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Hire</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('car_hire_background.jpg'); /* Replace with your image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+        }
+        .booking-container {
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;
+            margin: 50px auto; /* Center the booking container */
+        }
+        .booking-container h2 {
+            margin-bottom: 20px;
+        }
+        .booking-container input[type="date"],
+        .booking-container select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .booking-container button {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            background-color: #007BFF;
+            color: white;
+            font-size: 16px;
+        }
+        .booking-container button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Adding space to make users scroll */
+        .spacer {
+            height: 600px; /* Adjust the height as needed to create more scroll */
+        }
+
+        /* Cars section styling */
+        .car-section {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.7); /* Darker background for contrast */
+            padding: 40px 0;
+            color: white;
+        }
+        .car-section h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        .cars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .car-card {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .car-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .car-card h3 {
+            padding: 15px;
+            font-size: 20px;
+            color: #333;
+        }
+        .car-card p {
+            padding: 0 15px 15px;
+            color: #666;
+        }
+        .car-card .rate {
+            padding: 0 15px 15px;
+            color: #444;
+            font-weight: bold;
+        }
+        body{
+            font-family:Arial, Helvetica, sans-serif;
+            background-image:url('https://www.pixelstalk.net/wp-content/uploads/2016/06/Awesome-car-wallpapers-hd-1080p.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Car Hire Form -->
+    <div class="booking-container">
+        <h2>Hire a Car</h2>
+        <form action="/confirm_car_hire.html" method="post">
+            <label for="pickupdate">Pick-Up Date</label>
+            <input type="date" id="pickupdate" name="pickupdate" required>
+            
+            <label for="dropoffdate">Drop-Off Date</label>
+            <input type="date" id="dropoffdate" name="dropoffdate" required>
+            
+            <label for="car-type">Car Type</label>
+            <select id="car-type" name="car-type" required>
+                <option value="compact">Compact</option>
+                <option value="sedan">Sedan</option>
+                <option value="suv">SUV</option>
+                <option value="luxury">Luxury</option>
+            </select>
+            
+            <button type="submit">Hire Now</button>
+        </form>
+    </div>
+
+    <!-- Spacer to create scrolling -->
+    <div class="spacer"></div>
+
+    <!-- Car Images Section -->
+    <div class="car-section">
+        <h2>Available Cars</h2>
+        <div class="cars-grid">
+            <!-- Car 1 -->
+            <div class="car-card">
+                <img src="https://th.bing.com/th/id/OIP.i6Pwkong5FUnkP7B62nBXwAAAA?rs=1&pid=ImgDetMain" alt="Compact Car"> <!-- Replace with your image -->
+                <h3>Compact Car</h3>
+                <p>Fuel efficient and easy to park, perfect for city driving.</p>
+                <p class="rate">Rate: $40/day</p>
+            </div>
+            <!-- Car 2 -->
+            <div class="car-card">
+                <img src="https://carsguide-res.cloudinary.com/image/upload/f_auto,fl_lossy,q_auto,t_cg_hero_large/v1/editorial/2021-Hyundai-i30-sedan-red-1001x565-1.jpg" alt="Sedan"> <!-- Replace with your image -->
+                <h3>Sedan</h3>
+                <p>A comfortable sedan with plenty of space for the family.</p>
+                <p class="rate">Rate: $55/day</p>
+            </div>
+            <!-- Car 3 -->
+            <div class="car-card">
+                <img src="https://th.bing.com/th/id/OIP.HIG-D5QeoxzLotSUctIoSAAAAA?rs=1&pid=ImgDetMain" alt="SUV"> <!-- Replace with your image -->
+                <h3>SUV</h3>
+                <p>Spacious SUV with ample room for luggage and passengers.</p>
+                <p class="rate">Rate: $70/day</p>
+            </div>
+            <!-- Car 4 -->
+            <div class="car-card">
+                <img src="https://4.bp.blogspot.com/-xVxi-gnxbxw/VFCUUTwTkuI/AAAAAAAAAXU/mBK_TuHlJto/s1600/Ferrari.jpg" alt="Luxury Car"> <!-- Replace with your image -->
+                <h3>Luxury Car</h3>
+                <p>Drive in style and comfort with our premium luxury cars.</p>
+                <p class="rate">Rate: $120/day</p>
+            </div>
+            <!-- Car 5 -->
+            <div class="car-card">
+                <img src="https://th.bing.com/th/id/OIP.AeZ5SFXpw4R3_CaHGny9AQAAAA?rs=1&pid=ImgDetMain" alt="Convertible Car"> <!-- Replace with your image -->
+                <h3>Convertible Car</h3>
+                <p>Enjoy the open road with a stylish convertible.</p>
+                <p class="rate">Rate: $90/day</p>
+            </div>
+            <!-- Car 6 -->
+            <div class="car-card">
+                <img src="https://www.drivespark.com/img/2017/12/08-1512710470-jaguar-i-pace-production-version-debut-at-2018-geneva-auto-show6.jpg" alt="Electric Car"> <!-- Replace with your image -->
+                <h3>Electric Car</h3>
+                <p>Eco-friendly and efficient, the future of car travel.</p>
+                <p class="rate">Rate: $75/day</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
